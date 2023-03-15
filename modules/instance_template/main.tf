@@ -31,6 +31,7 @@ locals {
       disk_labels  = var.disk_labels
       auto_delete  = var.auto_delete
       boot         = "true"
+      allow_stopping_for_update = "true"
     },
   ]
 
