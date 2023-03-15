@@ -22,7 +22,7 @@ data "google_compute_subnetwork" "rhel_subnet" {
 # ---------------------------------------------------------------------------------------------------------------------
 module "rhel_server_template" {
   # Replace these sources with our own github repo source after mirroing.
- source = "git::https://github.com/vmie-shared-platform-services/iac_modules.git//modules/instance_template?ref=master"
+ source = "git::https://github.com/Ramakrishna540/gcp-terraform.git//modules/instance_template?ref=main"
   project_id = var.rhel_project_id
   region     = var.rhel_subnet_region
   machine_type = var.rhel_machine_type
@@ -131,7 +131,7 @@ module "rhel_server_template" {
 # rhel instance from Google Module.
 # ---------------------------------------------------------------------------------------------------------------------
 module "rhel_server" {
-  source              = "git::https://github.com/vmie-shared-platform-services/iac_modules.git//modules/compute_instance2?ref=master"
+  source              = "git::https://github.com/Ramakrishna540/gcp-terraform.git//modules/compute_instance?ref=main"
   instance_template = module.rhel_server_template.self_link
   zone = var.rhel_server_zone
   hostname = var.rhel_hostname
