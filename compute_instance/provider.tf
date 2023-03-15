@@ -18,11 +18,11 @@ terraform {
 # Note: You must change the project and region as per the requirement
 # ---------------------------------------------------------------------------------------------------------------------
 provider "google" {
-  project = "prj-vmie-n-n360"   
+  project = "My First Project"   
   region  = "europe-west3"
 }
 provider "google-beta" {
-  project = "prj-vmie-n-n360"
+  project = "My First Project"
   region  = "europe-west3"
 }
 # ---------------------------------------------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ provider "google-beta" {
 # ---------------------------------------------------------------------------------------------------------------------
 terraform {
   backend "gcs" {
-    bucket = "bkt-vmie-ew3-n-n360-01-tfstate-01"     #bucket name
+    bucket = "bkt-vmie-ew3-n-n360-01-tfstate-011"     #bucket name
     prefix = "n360/compute/n360-app-server-01/terraform/state"  #it is like a folder structure you can change prefix as per the requirement
   }
 }
